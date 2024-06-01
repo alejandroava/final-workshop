@@ -1,4 +1,8 @@
 import styles from './register.styles.css'
+import { fetchApi } from '../../helpers/fetch.api.js'
+import { navigateTo } from '../../Router'
+import { encryptData } from '../../helpers/encrypt.js'
+
 export function RegisterScene() {
     const root = document.getElementById('root')
     root.innerHTML = `
@@ -14,13 +18,29 @@ export function RegisterScene() {
     const $passwordHTML = root.querySelector("input[type='password']")
 
     const $myRegister = root.getElementsByTagName('form')[0]
-    $myRegister.addEventListener('submit', e => {
+    $myRegister.addEventListener('submit', async e => {
         e.preventDefault()
 
         if (!$emailHTML.value || !$passwordHTML.value || !$nameHTML) {
             alert('Ingrese todos los campos')
         }
-        console.log($emailHTML.value)
+        
+        const createdUser = await fetchApi('http://localhost:3000/users', {
+            method: 'POST',
+            headers:{
+                'Content-Type': 'application/json'      
+            },
+            body: JSON.stringify({
+                name: $nameHTML.value,
+                email: $emailHTML.value,
+                password: encryptData($passwordHTML.value)
+            })
+           
+        })
+         if(createdUser) {
+                navigateTo('/login')
+            }
+
 
     })
 }

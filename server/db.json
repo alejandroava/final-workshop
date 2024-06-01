@@ -1,4 +1,17 @@
 {
-    "users": [],
-    "tasks": []
+  "users": [
+    {
+      "id": "9ddc",
+      "name": "alejandro",
+      "email": "alejovlasquez@gmail.com",
+      "password": "U2FsdGVkX19twsKeIKyM8wf1M46KmMzeuGZnfW005Vw="
+    },
+    {
+      "id": "9cf1",
+      "name": "daniel",
+      "email": "alejo@gmail.com",
+      "password": "U2FsdGVkX19IYoG6ygHBfC60Ggo4QYs2i561q34TPYg="
+    }
+  ],
+  "tasks": []
 }

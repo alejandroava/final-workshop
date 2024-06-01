@@ -1,3 +1,7 @@
+import { navigateTo } from "../../Router.js"
+import { decryptData } from "../../helpers/encrypt.js"
+import { fetchApi } from "../../helpers/fetch.api.js"
+
 export function LoginScene() {
     const root = document.getElementById('root')
     root.innerHTML = `
@@ -12,13 +16,19 @@ export function LoginScene() {
     const $passwordHTML = root.querySelector("input[type='password']")
     const $myForm = root.getElementsByTagName('form')[0]
     
-    $myForm.addEventListener('submit', e => {
+    $myForm.addEventListener('submit', async e => {
         e.preventDefault()
 
         if (!$emailHTML.value || !$passwordHTML.value) {
             alert('Ingrese todos los campos')
         }
-        console.log($emailHTML.value)
+        const users = await fetchApi('http://localhost:3000/users')
+        const user = users.find(user => user.email === $emailHTML.value && decryptData(user.password) === $passwordHTML.value)
+        if (user) {
+            const token = Math.random().toString(36).substring(2);
+            localStorage.setItem('token', token)
+            navigateTo('/task')
+        }
 
     })
 }
