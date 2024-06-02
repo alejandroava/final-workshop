@@ -1,0 +1,12 @@
+.navbar{
+    display: flex;
+    gap: 10px;
+}
+
+.navbar_list{
+    display: flex;
+    gap: 10px;
+    list-style: none;
+    font-size: 20px;
+    cursor: pointer;
+}

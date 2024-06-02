@@ -1,7 +1,6 @@
 export function TaskScene() {
-    const root = document.getElementById('root')
-    root.innerHTML = `
-    <div>
+    const pageContent = `
+        <div>
         <hi>Vista de tareas</h1>
         <ul>
             <li>Tarea 1</li>
@@ -11,4 +10,12 @@ export function TaskScene() {
 
     </div>
     `
+    const logic = () => {
+        console.log('hola desde task')
+    }
+    return {
+        pageContent,
+        logic
+    }
+   
 }

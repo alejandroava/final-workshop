@@ -1,9 +1,23 @@
+import { NavbarLayout } from './component/navbarLayout/navbar.layout';
 import { routes } from './routes';
 import { notFoundScene } from './scenes/not-Found/notFoundScene';
 
 export function Router() {
     alert('soy el router')
     const path = window.location.pathname
+
+    if (path === '/login' || path === '/'){
+        if(localStorage.getItem('token')){
+            navigateTo('/task')
+            return
+        }
+    }
+    if (path === '/') {
+        if (!localStorage.getItem('token')) {
+            navigateTo('/login')
+            return
+        }
+    }
 
     if (path === '/login') {
         if (localStorage.getItem('token')){
@@ -22,7 +36,8 @@ export function Router() {
     }
     if (privateRoute) {
         if (localStorage.getItem('token')) {
-            privateRoute.scene()
+            const { pageContent, logic } = privateRoute.scene()
+            NavbarLayout(pageContent,logic)
             return
         }
         navigateTo('/login');
