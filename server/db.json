@@ -1,17 +1,19 @@
 {
   "users": [
     {
-      "id": "9ddc",
+      "id": "b079",
       "name": "alejandro",
       "email": "alejovlasquez@gmail.com",
-      "password": "U2FsdGVkX19twsKeIKyM8wf1M46KmMzeuGZnfW005Vw="
-    },
-    {
-      "id": "9cf1",
-      "name": "daniel",
-      "email": "alejo@gmail.com",
-      "password": "U2FsdGVkX19IYoG6ygHBfC60Ggo4QYs2i561q34TPYg="
+      "password": "U2FsdGVkX1/goLoCl+c0KgTrsZyEXrYR81szGVSpn/k="
     }
   ],
-  "tasks": []
+  "tasks": [
+    {
+      "id": "3d95",
+      "title": "estudiar",
+      "description": "riwi",
+      "select": "Media",
+      "date": "2024-06-07"
+    }
+  ]
 }
