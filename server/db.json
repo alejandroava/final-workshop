@@ -1,4 +1,12 @@
 {
   "users": [],
-  "task": []
+  "task": [
+    {
+      "title": "ejercicio solo mancuerna",
+      "description": "itagui",
+      "select": "Baja",
+      "date": "2024-06-13",
+      "id": "282d"
+    }
+  ]
 }

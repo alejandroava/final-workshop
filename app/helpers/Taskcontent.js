@@ -25,7 +25,7 @@ export async function TaskContent(allTask) {
     const deleteBtns = document.getElementsByClassName('delete_btn')
     editBtns = [...editBtns]
     editBtns.forEach(btn => {
-        btn.addEventListener('clcik', () => {
+        btn.addEventListener('click', () => {
             navigateTo(`/task/edit?taskId=${btn.getAttribute("data-id")}`)
         
         })
