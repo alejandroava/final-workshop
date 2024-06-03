@@ -1,19 +1,4 @@
 {
-  "users": [
-    {
-      "id": "b079",
-      "name": "alejandro",
-      "email": "alejovlasquez@gmail.com",
-      "password": "U2FsdGVkX1/goLoCl+c0KgTrsZyEXrYR81szGVSpn/k="
-    }
-  ],
-  "tasks": [
-    {
-      "id": "3d95",
-      "title": "estudiar",
-      "description": "riwi",
-      "select": "Media",
-      "date": "2024-06-07"
-    }
-  ]
+  "users": [],
+  "task": []
 }

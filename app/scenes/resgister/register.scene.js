@@ -23,6 +23,7 @@ export function RegisterScene() {
 
         if (!$emailHTML.value || !$passwordHTML.value || !$nameHTML) {
             alert('Ingrese todos los campos')
+            return
         }
         
         const createdUser = await fetchApi('http://localhost:3000/users', {
@@ -39,7 +40,8 @@ export function RegisterScene() {
         })
          if(createdUser) {
                 navigateTo('/login')
-            }
+        }
+        
 
 
     })
